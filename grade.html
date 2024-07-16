@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        // 1. wap to javascript class and object method use program to input marks of five subjects Physics, Chemistry, Biology, Mathematics and Computer. Calculate percentage and grade according to following
+
+        // Define the Student class
+         class Student{
+            constructor(physics, chemistry, biology, mathematics, computer) {
+                this.physics = physics;
+                this.chemistry = chemistry;
+                this.biology =  biology;
+                this.mathematics = mathematics;
+                this.computer = computer
+           }
+
+       // Calculate the total marks
+          calculateTotal() {
+          return this.physics + this.chemistry + this.biology + this.mathematics + this.computer;
+        }
+
+       // Calculate the percentage
+          calculatePercentage() {
+               let total = this.calculateTotal();
+               return (total / 500) * 100;
+            }
+
+      // Determine the grade based on the percentage
+          determineGrade() {
+             let percentage = this.calculatePercentage();
+            if (percentage >= 90) return "A";
+            else if (percentage >= 80) return "B";
+            else if (percentage >= 70) return "C";
+            else if (percentage >= 60) return "D";
+            else if (percentage >= 50) return "E";
+            else if (percentage >= 40) return "F";
+            else return "Failed";
+        }
+     }
+
+        // Create a new Student object and input marks
+        let student = new Student(
+            parseInt(prompt("Enter Physics marks:")),
+            parseInt(prompt("Enter Chemistry marks:")),
+            parseInt(prompt("Enter Biology marks:")),
+            parseInt(prompt("Enter Mathematics marks:")),
+            parseInt(prompt("Enter Computer marks:"))
+        );
+
+       // Calculate and display the percentage and grade
+       let percentage = student.calculatePercentage();
+       let Grade = student.determineGrade();
+
+       console.log(`Percentage: ${percentage.toFixed(2)}%`);
+       console.log(`Grade: ${Grade}`);
+    </script>
+</body>
+</html>

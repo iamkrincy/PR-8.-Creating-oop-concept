@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table border="1" cellspacing="5"  cellpadding="10px" style="text-align: center;">
+        <thead>
+            <tr style="font-style: oblique;">
+                <td>Name</td>
+                <td>Email</td>
+                <td>Phone</td>
+            </tr>
+        </thead>
+
+        <tbody id="tbody" style="font-style: oblique;"></tbody>
+
+    </table>
+
+    <script>
+        // Define the Person class
+        class Person {
+            constructor(name, email, phone) {
+                this.name = name;
+                this.email = email;
+                this.phone = phone;
+            }
+        }
+
+        // Create an array of Person objects
+        let data = [
+            new Person("jay", "jay@gmail.com", "12345"),
+            new Person("ajay", "ajay@gmail.com", "12345"),
+            new Person("vijay", "vijay@gmail.com", "12345"),
+            new Person("ashish", "ashish@gmail.com", "12345"),
+        ];
+
+        // Get the tbody element
+        let tbody = document.getElementById("tbody");
+
+        // Add data rows to the table
+        let rows = data.map((person) => {
+        let row = document.createElement("tr");
+           row.innerHTML = `
+            <td>${person.name}</td>
+            <td>${person.email}</td>
+            <td>${person.phone}</td>
+             `;
+            return row;
+            });
+
+        tbody.append(...rows);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 4. Write a Javascript program to create a class called "Employee" with a name, salary, and hire date attributes, and a method to calculate years of service.
+           class Employee {
+             constructor(name, salary, hireDate) {
+                this.name = name;
+                this.salary = salary;
+                this.hireDate = hireDate;
+            }
+
+            EmployeeDetail(){
+                console.log(`Name = ${this.name}`);
+                console.log(`salary = ${this.salary}`);
+                console.log(`Hire Date = ${this.hireDate}`);
+            }
+
+            service(){
+                let hire_year = this.hireDate.getFullYear();
+                let current_year = new Date().getFullYear();
+                console.log(`yaer of service = ${current_year - hire_year}`);   
+            }
+        }
+  
+        let Employee1 = new Employee("kikiee",50000, new Date('2006-05-22'));
+        Employee1.EmployeeDetail();
+        Employee1.service();
+    </script>
+</body>
+</html>

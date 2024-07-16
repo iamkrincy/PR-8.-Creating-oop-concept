@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+
+        <script>
+
+            // 5. Write a Javascript program to create a class called "Library" with a collection of books and methods to add and remove books.
+
+            class Library {
+                constructor(arr) {
+                    this.arr = arr;
+                }
+
+                collectionBook() {
+
+                    this.arr = ["The private life of an indian prince by Mulk Raj Anand", "Adventures of Tom Sawyer by Mark Twain", "The Wild Iris by Louis Gluck"]
+                    console.log("Initial collection of books =", this.arr);
+                }
+                addBook() {
+                    console.log("after adding book");
+                    this.arr.push("Geetanjali by Rabindra Nath Tagore");
+                    console.log("Updated collection of books =", this.arr);
+                }
+                removeBook() {
+                    console.log("after removing book");
+                    this.arr.splice(0, 1);
+                    console.log("Updated collection of books =", this.arr);
+                }
+            }
+
+            let c1 = new Library()
+            c1.collectionBook()
+            c1.addBook()
+            c1.removeBook()
+        </script>
+    </body>
+
+</html>

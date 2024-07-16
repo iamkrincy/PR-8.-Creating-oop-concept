@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Restaurant {
+            constructor() {
+                this.item = [];
+            }
+            menu() {
+                this.item = [
+                    {
+                        name: "Doner ",
+                        price: 100,
+                        rating: 4
+                    },
+                    {
+                        name: "Veg Schezwan Fried Rice",
+                        price: 120,
+                        rating: 3.5
+                    },
+                    {
+                        name: "Lahmacun",
+                        price: 140,
+                        rating: 3
+                    },
+                    {
+                        name: "Handvo",
+                        price: 160,
+                        rating: 4.5
+                    },
+                    {
+                        name: "Kadhai Paneer",
+                        price: 180,
+                        rating: 4
+                    },
+                    {
+                        name: "Kaju Masala",
+                        price: 100,
+                        rating: 4
+                    },
+                    {
+                        name: "Undhiyu",
+                        price: 120,
+                        rating: 3.5
+                    },
+                    {
+                        name: "Dal-Khichdi",
+                        price: 140,
+                        rating: 3
+                    },
+                    {
+                        name: "Baklava",
+                        price: 160,
+                        rating: 4.5
+                    },
+                    {
+                        name: "Gujarati Thali",
+                        price: 180,
+                        rating: 4
+                    }
+                ]
+
+                console.log("total items in menu are =", this.item.length);
+                console.log(this.item);
+                let sum = 0;
+                for (let i = 0; i < this.item.length; i++) {
+                    sum = sum + this.item[i].rating
+                }
+                let avg = sum / this.item.length
+                console.log("average rating of this menu =",avg);
+
+            }
+            addItem() {
+                console.log("after add new items");
+                this.item.push(
+                    {
+                        name: "Manti",
+                        price: 200,
+                        rating: 4
+                    },
+                    {
+                        name: "Veg Manchurian Fried Rice",
+                        price: 200,
+                        rating: 4.5
+                    },
+                    {
+                        name: "Kulfi",
+                        price: 200,
+                        rating: 3
+                    }
+                )
+                console.log("total items in menu are =", this.item.length);
+                console.log(this.item);
+                let sum = 0;
+                for (let i = 0; i < this.item.length; i++) {
+                    sum = sum + this.item[i].rating
+                }
+                let avg = sum / this.item.length
+                console.log("average rating of this menu =",avg);
+            }
+
+            removeItem() {
+
+                console.log("after removing items");
+                this.item.pop()
+                console.log("total items in menu are =", this.item.length);
+                console.log(this.item);
+                console.log(this.item.pop());
+
+                let sum = 0;
+                for (let i = 0; i < this.item.length; i++) {
+                    sum = sum + this.item[i].rating
+                }
+                let avg = sum / this.item.length
+                console.log("average rating of this menu =",avg);
+            }
+
+        }
+
+
+
+
+
+        let m1 = new Restaurant
+        m1.menu()
+        m1.addItem()
+        m1.removeItem()
+    </script>
+</body>
+</html>
